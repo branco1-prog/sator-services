@@ -102,3 +102,35 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Quote Request Form Submission Handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+
+    const subject = encodeURIComponent(`Sator Services Quote Request: ${service}`);
+    const body = encodeURIComponent(
+      `Hello Sator Services Team,\n\n` +
+      `I would like to request a quote for the following services:\n\n` +
+      `CLIENT DETAILS:\n` +
+      `- Name: ${firstName} ${lastName}\n` +
+      `- Email Address: ${email}\n` +
+      `- Service of Interest: ${service}\n\n` +
+      `FACILITY DETAILS / MESSAGE:\n` +
+      `${message}\n\n` +
+      `Best regards,\n` +
+      `${firstName} ${lastName}`
+    );
+
+    // Open the default mail client with prefilled information
+    window.location.href = `mailto:facility@satorservices.com.ng?subject=${subject}&body=${body}`;
+  });
+}
+

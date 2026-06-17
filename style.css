@@ -1,20 +1,22 @@
 /* Custom Properties & Reset */
 :root {
-  --primary: #0A2540; /* Deep blue */
-  --primary-light: #183C66;
-  --accent: #F2C94C; /* Gold/yellow accent */
-  --accent-hover: #DDB238;
+  --primary: #72C5F5; /* Sky Blue Brand Color */
+  --primary-dark: #47B3EF; /* Vibrant Medium Sky Blue for hover/focus */
+  --primary-deep: #0A2540; /* Deep Navy for dark backgrounds & high-contrast text */
+  --accent: #72C5F5; /* Sky Blue Accent */
+  --accent-hover: #47B3EF;
   --bg-color: #FAFAFB;
-  --text-dark: #1A1A1A;
+  --text-dark: #0A2540; /* Deep Navy for headings and dark text */
   --text-light: #4A5568;
   --white: #FFFFFF;
   --glass-bg: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(10, 37, 64, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(114, 197, 245, 0.15); /* Sky Blue soft shadow */
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-main: 'Outfit', sans-serif;
   --border-radius: 12px;
 }
+
 
 * {
   margin: 0;
@@ -94,14 +96,14 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: var(--primary);
+  background-color: var(--primary);
+  color: var(--primary-deep);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(242, 201, 76, 0.3);
+  box-shadow: 0 10px 20px rgba(114, 197, 245, 0.35);
 }
 
 .btn-outline {
@@ -112,7 +114,7 @@ p {
 
 .btn-outline:hover {
   background-color: var(--white);
-  color: var(--primary);
+  color: var(--primary-deep);
   transform: translateY(-2px);
 }
 
@@ -131,9 +133,10 @@ p {
 }
 
 .badge-secondary {
-  background-color: rgba(10, 37, 64, 0.1);
-  color: var(--primary);
+  background-color: rgba(114, 197, 245, 0.18);
+  color: var(--primary-deep);
 }
+
 
 /* Navbar */
 .navbar {
@@ -251,9 +254,10 @@ p {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(242, 201, 76, 0.15) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(114, 197, 245, 0.25) 0%, transparent 60%);
   animation: rotate 20s linear infinite;
 }
+
 
 @keyframes rotate {
   0% { transform: rotate(0deg); }
@@ -327,13 +331,13 @@ p {
 /* Stats Section */
 .stats {
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--primary-deep);
   padding: 4rem 0;
   position: relative;
   z-index: 2;
   margin-top: -2rem;
   border-radius: 20px 20px 0 0;
-  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 -10px 30px rgba(10, 37, 64, 0.15);
 }
 
 .stats-grid {
@@ -344,15 +348,16 @@ p {
 }
 
 .stats p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(11, 37, 64, 0.85);
   margin-bottom: 0;
 }
 
 .stat-num {
-  color: var(--accent);
+  color: var(--primary-deep);
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
+
 
 /* Services Section */
 .section-header {
@@ -393,7 +398,7 @@ p {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(10, 37, 64, 0.08);
+  box-shadow: 0 20px 40px rgba(114, 197, 245, 0.15);
 }
 
 .service-card:hover::before {
@@ -403,19 +408,19 @@ p {
 .card-icon {
   width: 60px;
   height: 60px;
-  background: rgba(10, 37, 64, 0.05);
+  background: rgba(114, 197, 245, 0.12);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  color: var(--primary);
+  color: var(--primary-deep);
   transition: var(--transition);
 }
 
 .service-card:hover .card-icon {
   background: var(--primary);
-  color: var(--white);
+  color: var(--primary-deep);
 }
 
 .card-icon svg {
@@ -426,14 +431,15 @@ p {
 .card-link {
   display: inline-block;
   margin-top: 1rem;
-  color: var(--primary);
+  color: var(--primary-dark);
   font-weight: 600;
   font-size: 0.9rem;
 }
 
 .card-link:hover {
-  color: var(--accent-hover);
+  color: var(--primary-deep);
 }
+
 
 /* About Section */
 .about {
@@ -465,8 +471,8 @@ p {
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: var(--accent);
-  color: var(--primary);
+  background: rgba(114, 197, 245, 0.2);
+  color: var(--primary-deep);
   border-radius: 50%;
   font-size: 0.8rem;
 }
@@ -498,7 +504,8 @@ p {
   margin: 0;
   width: 40px;
   height: 40px;
-  background: var(--accent);
+  background: var(--primary);
+  color: var(--primary-deep);
 }
 
 .floating-card .card-info {
@@ -538,12 +545,12 @@ p {
 .icon-circle {
   width: 48px;
   height: 48px;
-  background: rgba(10, 37, 64, 0.05);
+  background: rgba(114, 197, 245, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: var(--primary-deep);
   flex-shrink: 0;
 }
 
@@ -573,7 +580,7 @@ p {
   display: block;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  color: var(--primary);
+  color: var(--primary-deep);
 }
 
 .form-group input,
@@ -593,14 +600,14 @@ p {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--primary-dark);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+  box-shadow: 0 0 0 3px rgba(114, 197, 245, 0.25);
 }
 
 /* Footer */
 .footer {
-  background: var(--primary);
+  background: var(--primary-deep);
   color: var(--white);
   padding: 5rem 0 0;
 }
@@ -654,19 +661,20 @@ p {
 }
 
 .newsletter-form button {
-  background: var(--accent);
+  background: var(--primary);
   border: none;
   padding: 0 1.5rem;
   border-radius: 0 8px 8px 0;
-  color: var(--primary);
+  color: var(--primary-deep);
   font-weight: bold;
   cursor: pointer;
   transition: var(--transition);
 }
 
 .newsletter-form button:hover {
-  background: var(--accent-hover);
+  background: var(--primary-dark);
 }
+
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
